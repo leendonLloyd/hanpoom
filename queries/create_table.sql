@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS`picking_slip_items` (
   `pre_order_deadline_at` timestamp NULL DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`,`picking_slip_id`,`item_id`,`stock_id`,`order_fulfillment_product_id`),
+  PRIMARY KEY (`id`,`item_id`,`picking_slip_id`,`order_fulfillment_product_id`,`stock_id`),
   KEY `FK_picking_slips_id` (`picking_slip_id`),
   CONSTRAINT `FK_picking_slips_id` FOREIGN KEY (`picking_slip_id`) REFERENCES `picking_slips` (`id`)
 );

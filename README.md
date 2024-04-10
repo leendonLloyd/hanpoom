@@ -105,6 +105,22 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
+## API Specs
+
+```
+GET /order
+```
+| Parameter | Data Type | Values | Description |
+| --- | --- | --- | --- |
+| status | comma-delimited string | printed, not printed, held | filter by picking slip status |
+| isPreOrder | boolean string | |  filter picking slips with pre_order items
+| page | number | | page count (offsets the results) |
+| perPage | number | | record count per page |
+| order | string | asc, desc | sort order |
+| orderBy | string | id, created_at | reference property for sorting |
+| startDate | date string | YYYY-MM-DD HH:MM:SS | time range start (if passed without endDate, will fetch all records after the value) |
+| endDate | date string | YYYY-MM-DD HH:MM:SS | time range end (if passed without startDate, will fetch all records before the value)|
+
 ## Test
 
 ```bash
