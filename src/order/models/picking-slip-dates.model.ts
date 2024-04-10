@@ -13,7 +13,7 @@ export class PickingSlipDates {
   @PrimaryGeneratedColumn('increment', { type: 'bigint' })
   id: string;
 
-  @PrimaryColumn('bigint', { precision: 20 })
+  @PrimaryColumn('bigint', { precision: 20, unique: true })
   picking_slip_id: string;
 
   @Column('varchar', { length: 20, nullable: true })

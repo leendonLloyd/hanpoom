@@ -1,5 +1,5 @@
 -- PICKING_SLIP
-CREATE TABLE `picking_slips` (
+CREATE TABLE IF NOT EXISTS `picking_slips` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `order_id` bigint(20) NOT NULL,
   `order_fulfillment_order_id` bigint(20) DEFAULT NULL,
@@ -9,7 +9,7 @@ CREATE TABLE `picking_slips` (
 );
 
 -- PICKING_SLIP_ITEMS
-CREATE TABLE `picking_slip_items` (
+CREATE TABLE IF NOT EXISTS`picking_slip_items` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `picking_slip_id` bigint(20) NOT NULL,
   `item_id` bigint(20) NOT NULL,
@@ -31,9 +31,9 @@ CREATE TABLE `picking_slip_items` (
 );
 
 -- PICKING_SLIP_DATES
-CREATE TABLE `picking_slip_dates` (
+CREATE TABLE IF NOT EXISTS `picking_slip_dates` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `picking_slip_id` bigint(20) NOT NULL,
+  `picking_slip_id` bigint(20) NOT NULL UNIQUE,
   `printed_username` varchar(20) DEFAULT NULL,
   `inspected_username` varchar(20) DEFAULT NULL,
   `packed_username` varchar(20) DEFAULT NULL,

@@ -19,7 +19,7 @@ import { OrderModule } from './order/order.module';
       entities: [PickingSlips, PickingSlipItems, PickingSlipDates],
       // synchronize: true,
       logging: false,
-      multipleStatements: true,
+      multipleStatements: true
     }),
     OrderModule,
   ],
