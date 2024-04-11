@@ -12,11 +12,11 @@ import { PickingSlips } from "./picking-slip/models/picking-slips.model";
 async function bootstrap() {
   const datasource = new DataSource({
     type: "mysql",
-    host: "localhost",
+    host: process.env.DB_HOST,
     port: 3306,
-    username: "root",
-    password: "rootadmin",
-    database: "e_commerce",
+    username: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
     entities: [PickingSlips, PickingSlipItems, PickingSlipDates],
     logging: false,
     multipleStatements: true,
