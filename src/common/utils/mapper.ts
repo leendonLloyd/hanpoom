@@ -1,10 +1,8 @@
-import { PickingSlipsDto } from '../../order/dto/picking-slips.dto';
+import { PickingSlipsDto } from "../../picking-slip/dto/picking-slips.dto";
 
-export const mapPickingSlipsToResponse = (
-  pickingSlips: any,
-): PickingSlipsDto => {
-  const { order_id, id, picking_slip_status, count_of_pre_order_items } =
-    pickingSlips;
+export const mapPickingSlipsToResponse = (raw: any, entity: any): PickingSlipsDto => {
+  const { order_id, id, count_of_pre_order_items } = entity;
+  const { picking_slip_status } = raw;
 
   return {
     order_id,

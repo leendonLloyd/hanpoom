@@ -5,9 +5,9 @@ import "reflect-metadata";
 import { DataSource } from "typeorm";
 import { AppModule } from "./app.module";
 import { HttpExceptionFilter } from "./common/exception-filter";
-import { PickingSlipDates } from "./order/models/picking-slip-dates.model";
-import { PickingSlipItems } from "./order/models/picking-slip-items.model";
-import { PickingSlips } from "./order/models/picking-slips.model";
+import { PickingSlipDates } from "./picking-slip/models/picking-slip-dates.model";
+import { PickingSlipItems } from "./picking-slip/models/picking-slip-items.model";
+import { PickingSlips } from "./picking-slip/models/picking-slips.model";
 
 async function bootstrap() {
   const datasource = new DataSource({

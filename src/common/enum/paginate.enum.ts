@@ -1,9 +1,9 @@
 export enum OrderEnum {
-  ASC = 'asc',
-  DESC = 'desc',
+  ASC = "ASC",
+  DESC = "DESC",
 }
 
 export enum OrderByEnum {
-  ID = 'id',
-  CREATED_AT = 'created_at',
+  ID = "id",
+  CREATED_AT = "created_at",
 }

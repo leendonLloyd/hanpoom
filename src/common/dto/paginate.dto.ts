@@ -1,12 +1,6 @@
-import { Type } from 'class-transformer';
-import {
-  IsDateString,
-  IsEnum,
-  IsNumber,
-  IsOptional,
-  IsString,
-} from 'class-validator';
-import { OrderByEnum, OrderEnum } from '../enum/paginate.enum';
+import { Type } from "class-transformer";
+import { IsDateString, IsEnum, IsNumber, IsOptional, IsString } from "class-validator";
+import { OrderByEnum, OrderEnum } from "../enum/paginate.enum";
 export class PaginateDto {
   @IsNumber()
   @IsOptional()

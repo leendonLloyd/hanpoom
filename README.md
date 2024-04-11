@@ -57,7 +57,7 @@ imports: [
       logging: false,
       multipleStatements: true,
     }),
-    OrderModule,
+    PickingSlipModule,
   ]
 ```
 
@@ -108,12 +108,12 @@ $ npm run start:prod
 ## API Specs
 
 ```
-GET /order
+GET /picking-slip?
 ```
 | Parameter | Data Type | Values | Description |
 | --- | --- | --- | --- |
 | status | comma-delimited string | printed, not printed, held | filter by picking slip status |
-| isPreOrder | boolean string | |  filter picking slips with pre_order items
+| hasPreOrder | boolean string | |  filter picking slips with pre_order items
 | page | number | | page count (offsets the results) |
 | perPage | number | | record count per page |
 | order | string | asc, desc | sort order |

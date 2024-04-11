@@ -3,8 +3,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { PickingSlipDates } from './models/picking-slip-dates.model';
 import { PickingSlipItems } from './models/picking-slip-items.model';
 import { PickingSlips } from './models/picking-slips.model';
-import { OrderController } from './order.controller';
-import { OrderService } from './order.service';
+import { PickingSlipController } from './picking-slip.controller';
+import { PickingSlipService } from './picking-slip.service';
 
 @Module({
   imports: [
@@ -14,7 +14,7 @@ import { OrderService } from './order.service';
       PickingSlipDates,
     ]),
   ],
-  controllers: [OrderController],
-  providers: [OrderService],
+  controllers: [PickingSlipController],
+  providers: [PickingSlipService],
 })
-export class OrderModule {}
+export class PickingSlipModule {}

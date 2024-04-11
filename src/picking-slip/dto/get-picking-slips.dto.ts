@@ -29,18 +29,14 @@ export class GetPickingSlipsDto extends PaginateDto {
   @Type(() => String)
   @Transform((value) => {
     if (value != null) {
-      console.log('~', value);
-      
-      const values = value.value.toString().split(",");
+      const val = value.value.toString();
 
-      for (const val of values) {
-        if (!["true", "false"].includes(val)) {
-          throw new BadRequestException([{ message: `Invalid boolean value for ${value.key}: ${val}` }]);
-        }
+      if (!["true", "false"].includes(val)) {
+        throw new BadRequestException([{ message: `Invalid boolean value for ${value.key}: ${val}` }]);
       }
 
-      return values;
+      return val === "true";
     }
   })
-  isPreOrder?: boolean = true;
+  hasPreOrder?: boolean = true;
 }
