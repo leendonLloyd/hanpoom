@@ -18,7 +18,6 @@ async function bootstrap() {
     password: "rootadmin",
     database: "e_commerce",
     entities: [PickingSlips, PickingSlipItems, PickingSlipDates],
-    // synchronize: true,
     logging: false,
     multipleStatements: true,
   });

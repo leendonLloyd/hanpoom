@@ -24,41 +24,16 @@
 
 ## Description
 
-Sample NestJS e_commerce service using TypeORM + MySQL.
-
-Note: DB configuration should be updated in both `main.ts` and `app.module.ts`. See below for reference.
+Sample NestJS service using TypeORM + MySQL.
 
 
-`main.ts`
+
+`.env`
 ```bash
-const datasource = new DataSource({
-    type: 'mysql',
-    host: 'localhost',
-    port: 3306,
-    username: 'root',
-    password: 'rootadmin',
-    database: 'e_commerce',
-    entities: [PickingSlips, PickingSlipItems, PickingSlipDates],
-    logging: false,
-    multipleStatements: true,
-  });
-```
-`app.module.ts`
-```bash
-imports: [
-    TypeOrmModule.forRoot({
-      type: 'mysql',
-      host: 'localhost',
-      port: 3306,
-      username: 'root',
-      password: 'rootadmin',
-      database: 'e_commerce',
-      entities: [PickingSlips, PickingSlipItems, PickingSlipDates],
-      logging: false,
-      multipleStatements: true,
-    }),
-    PickingSlipModule,
-  ]
+DB_HOST=localhost
+DB_USERNAME=root
+DB_PASSWORD=rootadmin
+DB_NAME=e_commerce
 ```
 
 Sample data is automatically seeded to the database based on the generated sql files in `/seed` directory.
@@ -90,7 +65,15 @@ PickingSlipDates record count: 2853
 ```bash
 $ npm install
 ```
-* Next create an empty schema in your local MySQL DB named `e_commerce` and you're good to go! Make sure to specify correct root credentials.
+* Next create an empty schema in your local MySQL DB and configure it in your .env file. See below for reference:
+```
+DB_HOST=localhost
+DB_USERNAME=root
+DB_PASSWORD=rootadmin
+DB_NAME=e_commerce
+```
+
+Make sure to specify correct root credentials.
 
 ## Running the app
 

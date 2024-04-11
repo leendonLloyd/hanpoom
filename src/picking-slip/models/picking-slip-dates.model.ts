@@ -66,10 +66,6 @@ export class PickingSlipDates {
   @Column("varchar", { length: 20, nullable: true })
   held_reason: string;
 
- 
-  // @Column('varchar', {nullable: true, select: false })
-  // picking_slip_status: PickingSlipStatusEnum;
-
   @OneToOne(() => PickingSlips)
   @JoinColumn({ name: "picking_slip_id", referencedColumnName: "id", foreignKeyConstraintName: "FK_picking_slip_id" })
   picking_slip: PickingSlips;
